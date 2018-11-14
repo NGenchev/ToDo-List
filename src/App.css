@@ -1,0 +1,150 @@
+/**
+ * Base Settings for the Application
+ */
+
+.App { 
+  background: #333; 
+  padding: 200px 0; 
+  width: 100%; 
+  height: 100vh; 
+  overflow: hidden;
+  text-align: center;
+}
+
+.App, .App * {
+  box-sizing: border-box;
+}
+
+/**
+ * Typographic Settings
+ */
+
+.App h1 { 
+  color: #fff;
+  letter-spacing: .12em;
+  text-shadow: 0 2px 3px rgba( 0, 255, 255, .72 ); 
+  margin-bottom: 10px; 
+}
+
+.App h2 { 
+  color: #fff;
+  letter-spacing: .09em;
+  text-shadow: 0 2px 3px rgba( 0, 255, 255, .72 ); 
+}
+
+.App h3 { 
+  color: #f3f3f3; 
+  text-shadow: 0 2px 3px rgba( 0, 34, 45, .12 ); 
+}
+
+.App p {
+  color: lightgreen;
+  font-weight: 600;
+  letter-spacing: .1em;
+  font-style: italic;
+}
+
+/**
+ * Grid Settings
+ */
+
+.App .row::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 12px rgba(0,0,0,0.3);
+  border-radius: 6px;
+  background-color: #222;
+}
+
+.App .row::-webkit-scrollbar
+{
+  width: 12px;
+  background-color: #222;
+}
+
+.App .row::-webkit-scrollbar-thumb
+{
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0 0 12px rgba(0,0,0,.3);
+  background-color: #555;
+}
+
+.App .row {
+  display: flex;
+  justify-content: space-between;
+  width: 33.333%;
+  margin: 0 auto;
+  background: #222;
+  padding: 20px;
+  overflow-y: auto;
+  height: 700px;
+  border-radius: 20px;
+}
+
+
+/**
+ * Listing
+ */
+
+.App .list-todos {
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  list-style: none;
+  width: 250px;
+  padding: 25px 15px;
+  border: 1px solid skyblue;
+}
+
+.App .list-todos li { 
+  background: skyblue; 
+  cursor: pointer; 
+  min-width: 200px; 
+  padding: 10px; 
+  margin-bottom: 20px; 
+  border-radius: 15px;
+  transition: all .3s ease;
+  word-wrap: break-word;
+}
+
+.App .list-todos li:last-child {
+  margin-bottom: 0;
+}
+
+.App .list-todos li:hover { 
+  text-decoration: line-through; 
+  vertical-align: middle; 
+  color: #a00000; 
+}
+
+/**
+ * Form
+ */
+
+.App .form-create {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  width: 250px;
+  padding: 0 15px 25px 15px;
+  border: 1px solid skyblue;
+}
+
+.App .form-create textarea {
+    padding: 10px;
+    resize: none;
+    font-size: 15px;
+    color: chocolate;
+}
+
+.App .form-create .form__foot p {
+  letter-spacing: .03em;
+  color: skyblue;
+  font-size: 12.36px;
+}
