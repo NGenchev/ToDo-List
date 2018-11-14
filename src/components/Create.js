@@ -1,16 +1,18 @@
 import React from 'react';
 
-const Create = ({createMethod}) => {
+const Create = ({createMethod, cookies}) => {
 	const addTodo = () => {
 		let inputField = document.querySelector( '.form-create textarea' );
+
+		let todoContent = strip_html( inputField.value );
 		
-		// if ( inputField.value.length ) {
+		if ( todoContent !== false ) {
 			let todo = {};
-			todo.content = inputField.value;
-			
+			todo.content = strip_html( inputField.value );
 			createMethod( todo )
-			inputField.value = '';
-		
+
+			inputField.value = '';	
+		}
 	}
 
 	const handleSubmit = (e) => {
@@ -25,6 +27,12 @@ const Create = ({createMethod}) => {
 	    }
 	}
 
+	const strip_html = str => {
+       return str === null || str === '' 
+       ? false 
+       : str.toString().replace(/<[^>]*>/g, '');
+	}
+
 	return(
 		<div className="form-create">
 			<div className="form__head">
@@ -32,7 +40,7 @@ const Create = ({createMethod}) => {
 			</div>
 
 			<div className="form__body">
-				<form  onSubmit={ handleSubmit }>
+				<form onSubmit={ handleSubmit }>
 					<textarea 
 						onKeyPress={ handleSending } 
 						placeholder="Enter a content for todo"
@@ -42,9 +50,7 @@ const Create = ({createMethod}) => {
 			</div>
 
 			<div className="form__foot">
-				<p>Press enter to add new record.</p>
-
-				<p>Press shift + enter to add new line.</p>
+				<p>Press enter to add new record. Press shift + enter to add new line. You can easily remove one todo by click on it.</p>
 			</div>
 		</div>
 	)

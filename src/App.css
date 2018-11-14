@@ -4,7 +4,7 @@
 
 .App { 
   background: #333; 
-  padding: 200px 0; 
+  padding: 150px 0; 
   width: 100%; 
   height: 100vh; 
   overflow: hidden;
@@ -35,6 +35,13 @@
 .App h3 { 
   color: #f3f3f3; 
   text-shadow: 0 2px 3px rgba( 0, 34, 45, .12 ); 
+  letter-spacing: .06em;
+  font-weight: 350;
+  padding-bottom: 8px;
+  width: 65%;
+  margin: 20px auto;
+  border-bottom: 2px solid skyblue;
+  text-shadow: 2px 2px 2px rgba(255, 255, 255, .7);
 }
 
 .App p {
@@ -70,8 +77,9 @@
 
 .App .row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  width: 33.333%;
+  width: 50%;
   margin: 0 auto;
   background: #222;
   padding: 20px;
@@ -80,20 +88,24 @@
   border-radius: 20px;
 }
 
+.App .row > .column > * {
+  border-radius: 8px;
+}
+
 
 /**
  * Listing
  */
 
 .App .list-todos {
-  margin: 0 auto;
+  margin: 0 auto 25px;
   padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
   list-style: none;
-  width: 250px;
+  width: 500px;
   padding: 25px 15px;
   border: 1px solid skyblue;
 }
@@ -123,7 +135,9 @@
  * Form
  */
 
-.App .form-create {
+.App .form-create,
+.App .form-delete,
+.App .message-success {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -131,7 +145,7 @@
   margin: 0 auto;
   padding: 0;
   list-style: none;
-  width: 250px;
+  width: 350px;
   padding: 0 15px 25px 15px;
   border: 1px solid skyblue;
 }
@@ -143,8 +157,64 @@
     color: chocolate;
 }
 
-.App .form-create .form__foot p {
+.App .form-create .form__foot p,
+.App .form-delete .form__foot p {
   letter-spacing: .03em;
   color: skyblue;
   font-size: 12.36px;
+}
+
+.App .form-delete {
+  margin-top: 20px;
+}
+
+.App .form-delete button {
+  appearance: none;
+  outline: none;
+  border: none;
+  border-radius: 7px;
+  background: orange;
+  cursor: pointer;
+  padding: 10px 50px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  transition: box-shadow .3s ease;
+}
+
+.App .form-delete button:hover {
+  box-shadow: inset 0 -8px 70px -10px rgba(51, 51, 51, 0.9);
+}
+
+/**
+ * Footer
+ */
+
+.App .footer {
+  width: 100%;
+  background: #333;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 20px;
+}
+
+.App .footer p {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  letter-spacing: .01em;
+  font-style: normal;
+  font-weight: 300;
+}
+
+/**
+ * Message Success
+ */
+
+.App .message-success {
+  width: 525px;
+  padding: 30px;
+
 }
