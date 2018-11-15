@@ -1,13 +1,17 @@
 import React from 'react'
 
-const Delete = ({deleteAllMethod}) => {
+const Delete = ({deleteAllMethod, emptyCheck}) => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		var sureCheck = window.confirm( "Are you sure to clean whole list?" );
-		if ( sureCheck ) {
-			deleteAllMethod()
+		if ( emptyCheck ) {
+			var sureCheck = window.confirm( "Are you sure to clean whole list?" );
+			if ( sureCheck ) {
+				deleteAllMethod()
+			}
+		} else {
+			alert( 'You already finish all of your "todo" tasks. ' );
 		}
 	}
 

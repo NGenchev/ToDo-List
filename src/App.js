@@ -75,6 +75,12 @@ class App extends Component {
     })
   }
 
+  emptyCheck() {
+    if ( this.state.todos ) {
+      return this.state.todos.length;
+    }
+  }
+
   cleanList() {
     this.setState({
       'todos' : null
@@ -99,6 +105,7 @@ class App extends Component {
               <Controls 
                 createMethod={ (todo) => { this.createTodo(todo) } } 
                 deleteAllMethod={ () => { this.cleanList() } }
+                emptyCheck={ this.emptyCheck() }
               />
 
               <Footer />

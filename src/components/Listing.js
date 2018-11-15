@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Listing = ({todos, deleteMethod}) => {
-	if ( todos ) {
+	if ( todos && todos.length ) {
 		const todosList = todos.map(todo => {
 			return (
 				<li 
